@@ -1,3 +1,5 @@
+.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+.config/ibus/bus/*
 .config/onedrive/*.sqlite3*
 .config/onedrive/.config.backup
 .config/onedrive/session_upload.*

@@ -75,13 +75,14 @@ tooltip label {
 #custom-brightness,
 #custom-sync,
 #network,
-#bluetooth {
+#bluetooth,
+#tray {
     margin: 0 4px;
     border-radius: 10px;
     font-weight: bold;
     transition: all 0.3s ease;    
     font-size: 14px;
-    padding: 3px 0;
+    padding: 2px 0;
     
 }
 
@@ -110,7 +111,7 @@ tooltip label {
 #pulseaudio {
     background: rgba(250, 179, 135, 0.15);
     color: #fab387;
-    padding: 5px 4px;
+    padding: 4px 4px;
     font-size: 12px;
  }
 
@@ -121,7 +122,7 @@ tooltip label {
 #pulseaudio.muted {
     background: rgba(243, 139, 168, 0.15);
     color: #f38ba8;
-    padding: 2px 0;
+    padding: 0;
     padding-right: 2px;
     font-size: 16px;
 }
@@ -151,7 +152,7 @@ tooltip label {
 
 #custom-brightness {
     background: rgba(254, 234, 170, 0.15);
-    padding-right: 6px;
+    padding-right: 5px;
     color: rgba(254, 234, 170, 1);
 }
 
@@ -161,7 +162,7 @@ tooltip label {
 
 #network {
     background: rgba(148, 226, 213, 0.15);
-    padding-right: 6px;
+    padding-right: 5px;
     color: #94e2d5;
 }
 
@@ -176,7 +177,6 @@ tooltip label {
 
 #bluetooth {
     background: rgba(137, 180, 250, 0.15);
-    margin-bottom: 5px;
     color: #89b4fa;
 }
 
@@ -188,4 +188,11 @@ tooltip label {
 #bluetooth.off {
     background: rgba(88, 91, 112, 0.15);
     color: #585b70;
+    margin-bottom: 5px;
+}
+
+#tray {
+    background: rgba(137, 180, 250, 0.15);
+    color: #89b4fa;
+    margin-bottom: 5px;
 }
