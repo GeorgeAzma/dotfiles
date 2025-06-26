@@ -1,0 +1,12 @@
+dracula-gtk-theme
+dracula-icons-git
+fontpreview
+google-chrome
+hyprshade
+neofetch
+onedrive-abraunegg
+rose-pine-cursor
+rose-pine-hyprcursor
+spotify
+visual-studio-code-bin
+yay

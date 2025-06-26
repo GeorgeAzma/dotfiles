@@ -1,0 +1,210 @@
+* {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1));
+}
+
+.notification {
+    border-radius: 12px;
+    box-shadow: inset 0px 0px 16px rgba(80, 90, 120, 0.2);
+    background: linear-gradient(135deg,
+            rgba(49, 50, 68, 0.85) 0%,
+            rgba(30, 30, 46, 0.5) 100%);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 8px;
+}
+
+.notification.critical {
+    box-shadow: inset 0px 0px 16px rgba(253, 60, 80, 0.2);
+    background: linear-gradient(135deg,
+            rgba(253, 83, 108, 0.2) 0%,
+            rgba(230, 76, 102, 0.1) 100%);
+}
+
+.notification.low {
+    box-shadow: inset 0px 0px 16px rgba(80, 120, 220, 0.2);
+    background: linear-gradient(135deg,
+            rgba(40, 60, 110, 0.5) 0%,
+            rgba(30, 30, 60, 0.4) 100%);
+}
+
+.notification-content {
+    background: transparent;
+    padding: 8px;
+    padding-left: 12px;
+    border-radius: 8px;
+}
+
+.notification-default-action,
+.notification-action {
+    border-radius: 8px;
+    color: #cdd6f4;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.15), rgba(79, 70, 229, 0.15));
+}
+
+.notification-default-action {
+    border-radius: 8px;
+}
+
+.control-center {
+    background: rgba(30, 30, 46, 0.4);
+    border-radius: 20px;
+    padding: 16px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+    color: #6c7086;
+    font-size: 14px;
+}
+
+.widget-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #cdd6f4;
+}
+
+.widget-title>button {
+    font-size: 1.1rem;
+    color: #6c7086;
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1));
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.widget-title>button:hover {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(79, 70, 229, 0.2));
+    border-color: rgba(147, 51, 234, 0.4);
+}
+
+.widget-title>button:active {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(79, 70, 229, 0.3));
+}
+
+.widget-dnd {
+    background: transparent;
+    border-radius: 12px;
+    padding-top: 12px;
+    font-size: 0px;
+}
+
+.widget-dnd>switch {
+    border-radius: 64px;
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(79, 70, 229, 0.2));
+}
+
+.widget-dnd>switch:hover {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(79, 70, 229, 0.5));
+}
+
+.widget-dnd>switch:checked {    
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(79, 70, 229, 0.8));
+    border-color: #9333ea;
+}
+
+.widget-dnd>switch slider {
+    background: #f5f5f5;
+}
+
+.widget-label {
+    color: #cdd6f4;
+}
+
+.widget-label>label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #cdd6f4;
+}
+
+.widget-volume, .widget-backlight {
+    background-color: transparent;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 12px;
+}
+
+.notification-row .notification-background {
+    background: transparent;
+}
+
+.notification-row .notification-background .notification-content .notification-body {
+    color: #cdd6f4;
+    font-size: 14px;
+}
+
+.notification-row .notification-background .notification-content .summary {
+    color: #f5f5f5;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.notification-row .notification-background .notification-content .time {
+    color: #6c7086;
+    font-size: 12px;
+}
+
+.notification-row .notification-background .notification-content .body {
+    color: #cdd6f4;
+}
+
+.close-button {
+    color: transparent;
+    background: transparent;
+}
+
+.control-center .notification-row:first-child {
+    margin-top: 0px;
+}
+
+.control-center .notification-row:last-child {
+    margin-bottom: 0px;
+}
+
+scrollbar {
+    background: transparent;
+}
+
+scrollbar track {
+    background: rgba(108, 112, 134, 0.1);
+    border-radius: 3px;
+}
+
+scrollbar thumb {
+    background: linear-gradient(135deg, #9333ea, #4f46e5);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+scrollbar thumb:hover {
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+}
+
+.notification-row .notification-background .notification-content .image {
+    border-radius: 12px;
+}
+
+.notification-row .notification-background .notification-content .app-icon {
+    border-radius: 8px;
+}
+
+.notification {
+    animation: notification-slide-in 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

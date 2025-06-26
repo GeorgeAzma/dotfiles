@@ -1,0 +1,14 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+image/x-xcursor=com.google.Chrome.desktop
+application/yaml=code.desktop
+application/x-zerosize=code.desktop
+
+[Added Associations]
+image/x-xcursor=com.google.Chrome.desktop;
+application/yaml=code.desktop;
+application/x-zerosize=code.desktop;

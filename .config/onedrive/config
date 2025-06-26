@@ -1,0 +1,3 @@
+sync_dir = "~/onedrive"
+force_session_upload = "true"
+delay_inotify_processing = "true"

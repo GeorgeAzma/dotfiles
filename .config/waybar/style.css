@@ -1,0 +1,191 @@
+* {
+    border: none;
+    font-family: "JetBrains Mono Nerd", "Inter", "Font Awesome 6 Free";
+    font-size: 12px;
+    padding: 0;
+}
+
+window#waybar {
+    background: rgba(26, 27, 38, 0.85);
+    color: #cdd6f4;
+    border-radius: 12px;
+}
+
+tooltip {
+    font-size: 22px;
+    background: rgba(26, 27, 38, 0.95);
+    border-radius: 10px;
+    color: #cdd6f4;
+    padding: 4px;
+    border: 1.5px solid rgba(137, 180, 250, 0.15);
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
+
+#custom-launcher {
+    background: linear-gradient(45deg, #89b4fa, #74c7ec);
+    color: #1e1e2e;
+    border-radius: 10px;
+    padding-right: 3.7px;
+    padding-bottom: 1px;
+    margin: 4px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 2px rgba(137, 180, 250, 0.3);
+}
+
+#custom-launcher:hover {
+    background: linear-gradient(45deg, #74c7ec, #89b4fa);
+}
+
+#workspaces {
+    background: rgba(49, 50, 68, 0.6);
+    border-radius: 10px;
+    margin: 0 4px;
+}
+
+#workspaces button {
+    margin: 2px;
+    border-radius: 10px;
+    color: rgba(205, 214, 244, 0.6);
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(137, 180, 250, 0.2);
+    color: #cdd6f4;
+    font-weight: 600;
+}
+
+#workspaces button.active {
+    background: linear-gradient(45deg, #89b4fa, #74c7ec);
+    color: #1e1e2e;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(137, 180, 250, 0.4);
+}
+
+#clock.time,
+#custom-notifications,
+#pulseaudio,
+#custom-media,
+#custom-brightness,
+#custom-sync,
+#network,
+#bluetooth {
+    margin: 0 4px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;    
+    font-size: 14px;
+    padding: 3px 0;
+    
+}
+
+#clock.time {
+    background: rgba(116, 199, 236, 0.15);
+    color: #74c7ec;
+    font-size: 13px;
+    font-family: monospace;
+}
+
+#clock.time:hover {
+    background: rgba(116, 199, 236, 0.25);
+}
+
+#custom-notifications {
+    background: rgba(245, 194, 231, 0.15);
+    color: #f5c2e7;
+    padding: 4px;
+    font-size: 12px;
+}
+
+#custom-notifications:hover {
+    background: rgba(245, 194, 231, 0.25);
+}
+
+#pulseaudio {
+    background: rgba(250, 179, 135, 0.15);
+    color: #fab387;
+    padding: 5px 4px;
+    font-size: 12px;
+ }
+
+#pulseaudio:hover {
+    background: rgba(250, 179, 135, 0.25);
+}
+
+#pulseaudio.muted {
+    background: rgba(243, 139, 168, 0.15);
+    color: #f38ba8;
+    padding: 2px 0;
+    padding-right: 2px;
+    font-size: 16px;
+}
+
+#custom-media {
+    background: rgba(203, 166, 247, 0.15);
+    color: #cba6f7;
+}
+
+#custom-media.Playing {
+    background: rgba(166, 227, 161, 0.15);
+    color: #a6e3a1;
+}
+
+#custom-media.Paused {
+    background: rgba(255, 160, 180, 0.15);
+    color: rgba(255, 160, 180, 1);
+}
+
+#custom-media.Playing:hover {
+    background: rgba(166, 227, 161, 0.25);
+}
+
+#custom-media.Paused:hover {
+    background: rgba(255, 160, 180, 0.25);
+}
+
+#custom-brightness {
+    background: rgba(254, 234, 170, 0.15);
+    padding-right: 6px;
+    color: rgba(254, 234, 170, 1);
+}
+
+#custom-brightness:hover {
+    background: rgba(249, 226, 175, 0.25);
+}
+
+#network {
+    background: rgba(148, 226, 213, 0.15);
+    padding-right: 6px;
+    color: #94e2d5;
+}
+
+#network:hover {
+    background: rgba(148, 226, 213, 0.25);
+}
+
+#network.disconnected {
+    background: rgba(243, 139, 168, 0.15);
+    color: #f38ba8;
+}
+
+#bluetooth {
+    background: rgba(137, 180, 250, 0.15);
+    margin-bottom: 5px;
+    color: #89b4fa;
+}
+
+#bluetooth:hover {
+    background: rgba(137, 180, 250, 0.25);
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    background: rgba(88, 91, 112, 0.15);
+    color: #585b70;
+}

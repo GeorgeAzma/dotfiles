@@ -1,0 +1,7 @@
+.config/onedrive/*.sqlite3*
+.config/onedrive/.config.backup
+.config/onedrive/session_upload.*
+.config/onedrive/refresh_token
+.config/dconf/user
+.config/session
+.config/QtProject.conf

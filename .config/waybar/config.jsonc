@@ -1,0 +1,160 @@
+{
+    "layer": "top",
+    "position": "right",
+    "spacing": 8,
+    "margin-right": 2,
+    "margin-left": 0,
+    "height": 10,
+    "tooltip": true,
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "clock#time",
+        "custom/notifications",
+        "pulseaudio",
+        "custom/media",
+        "custom/brightness",
+        "network",
+        "bluetooth",
+        "battery"
+    ],
+    "custom/launcher": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "wofi --show drun"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "on-click": "activate"
+    },
+    "clock#time": {
+        "format": "{:%H\n%M}",
+        "tooltip-format": "{:%A, %d %B}",
+        "tooltip": true,
+        "interval": 1
+    },
+    "custom/notifications": {
+        "format": "{icon}{text}",
+        "format-icons": {
+            "notification": "",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "exec-if": "which swaync-client",
+        "return-type": "json",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t",
+        "on-click-middle": "swaync-client -d",
+        "on-click-right": "swaync-client -C",
+        "escape": true,
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{volume}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰄜",
+            "portable": "󰄜",
+            "car": "󰄋",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "custom/media": {
+        "format": "{icon}",
+        "format-icons": {
+            "Playing": "󰐊",
+            "Paused": "󰏤",
+            "Stopped": "󰓛"
+        },
+        "return-type": "json",
+        "max-length": 40,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous"
+    },
+    "custom/brightness": {
+        "format": "{text}",
+        "exec": "/home/lumi/.config/waybar/brightness.sh",
+        "interval": "once",
+        "on-click": "ddcutil setvcp 10 0; echo 󰃞 > /tmp/waybar_brightness; pkill -SIGRTMIN+8 waybar",
+        "on-click-middle": "ddcutil setvcp 10 50; echo 󰃟 > /tmp/waybar_brightness; pkill -SIGRTMIN+8 waybar",
+        "on-click-right": "ddcutil setvcp 10 100; echo 󰃠 > /tmp/waybar_brightness; pkill -SIGRTMIN+8 waybar",
+        "signal": 8
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "format-ethernet": "&#xf012; ",
+        "format-disconnected": "󰤭",
+        "tooltip-format": "{essid} {signalStrength}%\n{ifname} {ipaddr}",
+        "tooltip-format-ethernet": "eth {ipaddr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor",
+        "tooltip": true
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}\n{capacity}%",
+        "format-charging": "󰂄\n{capacity}%",
+        "format-plugged": "󰂄\n{capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    }
+}
