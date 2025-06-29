@@ -21,9 +21,9 @@ fcitx5-configtool
 fcitx5-gtk
 fcitx5-mozc
 fcitx5-qt
-fontpreview
 gimp
 git
+glow
 google-chrome
 grim
 gvfs
@@ -34,7 +34,7 @@ hyprshade
 iftop
 inotify-tools
 inter-font
-iwd
+jq
 lib32-nvidia-utils
 linux
 linux-firmware
@@ -42,7 +42,6 @@ mpc
 mpd
 nano
 neofetch
-network-manager-applet
 networkmanager
 nftables
 noto-fonts-cjk
@@ -56,6 +55,7 @@ nvidia-utils
 nvtop
 nwg-look
 obsidian
+ocaml
 onedrive-abraunegg
 otf-font-awesome
 pavucontrol

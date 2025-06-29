@@ -17,9 +17,9 @@
     "notification-icon-size": 60,
     "notification-body-image-height": 200,
     "notification-body-image-width": 200,
-    "timeout": 12,
-    "timeout-low": 6,
-    "timeout-critical": 1,
+    "timeout": 8,
+    "timeout-low": 4,
+    "timeout-critical": 0,
     "fit-to-screen": true,
     "keyboard-shortcuts": true,
     "image-visibility": "when-available",
@@ -30,20 +30,19 @@
     "widgets": [
         "mpris",
         "title",
-        "dnd",
         "notifications",
         "volume",
         "backlight"
     ],
     "widget-config": {
         "title": {
-            "text": "Notification Center",
+            "text": "",
             "clear-all-button": true,
             "button-text": "󰆴"
         },
         "label": {
             "max-lines":1,
-            "text": "Notification Center!"
+            "text": ""
         },
         "mpris": {
             "image-size": 80,
@@ -54,9 +53,6 @@
         },
         "backlight": {
             "label": "󰃟 "
-        },
-        "dnd": {
-            "text": "Do Not Disturb"
         }
     }
 }

@@ -117,7 +117,7 @@
             "󰤥",
             "󰤨"
         ],
-        "format-ethernet": "&#xf012; ",
+        "format-ethernet": " &#xf1e6;",
         "format-disconnected": "󰤭",
         "tooltip-format": "{essid} {signalStrength}%\n{ifname} {ipaddr}",
         "tooltip-format-ethernet": "eth {ipaddr}",

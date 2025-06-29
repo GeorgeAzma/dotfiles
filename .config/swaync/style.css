@@ -82,21 +82,20 @@
 }
 
 .widget-title>button {
-    font-size: 1.1rem;
-    color: #6c7086;
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1));
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(79, 70, 229, 0.3));
     border-radius: 8px;
-    padding: 8px 16px;
+    padding: 6px 12px;
     transition: all 0.2s ease;
 }
 
 .widget-title>button:hover {
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(79, 70, 229, 0.2));
-    border-color: rgba(147, 51, 234, 0.4);
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.4), rgba(79, 70, 229, 0.4));
 }
 
 .widget-title>button:active {
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(79, 70, 229, 0.3));
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.5), rgba(79, 70, 229, 0.5));
 }
 
 .widget-dnd {

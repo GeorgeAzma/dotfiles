@@ -1,11 +1,11 @@
-width=20%
-lines=11
+width = 19%
+lines = 11
 
+no_actions = true
 hide_scroll = true
 allow_images = true
 image_size = 25
-prompt=
+prompt =
 
-matching=fuzzy
-insensitive=true
-columns=1
+matching = fuzzy
+insensitive = true
