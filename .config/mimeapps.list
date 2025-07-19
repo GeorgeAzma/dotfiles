@@ -7,8 +7,10 @@ x-scheme-handler/unknown=google-chrome.desktop
 image/x-xcursor=com.google.Chrome.desktop
 application/yaml=code.desktop
 application/x-zerosize=code.desktop
+text/markdown=code.desktop
 
 [Added Associations]
 image/x-xcursor=com.google.Chrome.desktop;
 application/yaml=code.desktop;
 application/x-zerosize=code.desktop;
+text/markdown=code.desktop;

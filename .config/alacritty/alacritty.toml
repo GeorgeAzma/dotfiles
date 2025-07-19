@@ -1,7 +1,7 @@
 # Alacritty Configuration (TOML format)
 
 [window]
-opacity = 0.9
+opacity = 0.6
 
 [scrolling]
 history = 10000
@@ -20,8 +20,8 @@ background = "#1e1e1e"
 foreground = "#d4d4d4"
 
 [colors.selection]
-text = "#1e1e1e"
-background = "#d4d4d4"
+text = "#d4d4d4"
+background = "#414560"
 
 [cursor]
 style = "Beam"

@@ -16,7 +16,8 @@
         "custom/brightness",
         "network",
         "bluetooth",
-        "battery"//,
+        "battery",
+        "custom/weather"//,
         // "tray"
     ],
     "custom/launcher": {
@@ -57,7 +58,7 @@
             "dnd-inhibited-none": "<span font-weight='regular'></span>"
         },
         "return-type": "json",
-        "exec": "~/.config/waybar/notif-cnt.sh",
+        "exec": "~/.config/waybar/scripts/notif-cnt.sh",
         "on-click": "swaync-client -t",
         "on-click-middle": "swaync-client -d",
         "on-click-right": "swaync-client -C",
@@ -100,7 +101,7 @@
     },
     "custom/brightness": {
         "format": "{text}",
-        "exec": "~/.config/waybar/brightness.sh",
+        "exec": "~/.config/waybar/scripts/brightness.sh",
         "interval": "once",
         "on-click": "ddcutil setvcp 10 0; echo 󰃞 > /tmp/waybar_brightness; pkill -SIGRTMIN+8 waybar",
         "on-click-middle": "ddcutil setvcp 10 50; echo 󰃟 > /tmp/waybar_brightness; pkill -SIGRTMIN+8 waybar",
@@ -157,6 +158,11 @@
             "󰂂",
             "󰁹"
         ]
+    },
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "return-type": "json",
+        "interval": 600
     }//,
     // "tray": {
     //     "max-length": 8,

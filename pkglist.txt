@@ -21,6 +21,7 @@ fcitx5-configtool
 fcitx5-gtk
 fcitx5-mozc
 fcitx5-qt
+geoclue
 gimp
 git
 glow
@@ -64,6 +65,7 @@ pipewire-alsa
 pipewire-audio
 pipewire-pulse
 pyenv
+python-installer
 python-pip
 qt5-wayland
 qt5ct

@@ -18,7 +18,7 @@
 	<video-files/>
 </action>
 <action>
-	<icon></icon>
+	<icon>archive-extract</icon>
 	<name>Unzip</name>
 	<submenu></submenu>
 	<unique-id>1750771228797273-1</unique-id>
@@ -27,5 +27,18 @@
 	<range>*</range>
 	<patterns>*.zip</patterns>
 	<other-files/>
+</action>
+<action>
+	<icon>visualstudiocode</icon>
+	<name>Open In VSCode</name>
+	<submenu></submenu>
+	<unique-id>1751968029644889-1</unique-id>
+	<command>code %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
 </action>
 </actions>

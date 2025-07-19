@@ -51,3 +51,5 @@ PS1='\[\e[36m\]\W\[\e[32m\]\$\[\e[0m\] '
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
+# this might cause errors, to avoid do:
+# env -u PYENV_ROOT PATH=$(echo "$PATH" | sed 's|^$HOME/.pyenv/bin:||' | sed 's|^$HOME/.pyenv/shims:||') yay -S anki-bin
