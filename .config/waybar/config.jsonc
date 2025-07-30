@@ -17,8 +17,9 @@
         "network",
         "bluetooth",
         "battery",
-        "custom/weather"//,
-        // "tray"
+        "custom/hwtop",
+        "custom/weather",
+        "tray"
     ],
     "custom/launcher": {
         "format": "󰣇",
@@ -42,11 +43,10 @@
     "clock#time": {
         "format": "{:%H\n%M}",
         "tooltip-format": "{:%A, %d %B}",
-        "tooltip": true,
         "interval": 1
     },
     "custom/notifications": {
-        "format": "{icon}{text}",
+        "format": "{icon} {text}",
         "format-icons": {
             "notification": "",
             "none": "<span font-weight='regular'></span>",
@@ -123,8 +123,7 @@
         "tooltip-format": "{essid} {signalStrength}%\n{ifname} {ipaddr}",
         "tooltip-format-ethernet": "eth {ipaddr}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "nm-connection-editor",
-        "tooltip": true
+        "on-click": "nm-connection-editor"
     },
     "bluetooth": {
         "format": "󰂯",
@@ -134,7 +133,8 @@
         "format-connected": "󰂱",
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
-        "on-click": "blueman-manager"
+        "on-click": "blueman-manager",
+        "on-click-right": "~/.config/waybar/scripts/bluetooth-toggle.sh"
     },
     "battery": {
         "states": {
@@ -163,14 +163,21 @@
         "exec": "~/.config/waybar/scripts/weather.sh",
         "return-type": "json",
         "interval": 600
-    }//,
-    // "tray": {
-    //     "max-length": 8,
-    //     "icon-size": 16,
-    //     "tooltip": true,
-    //     "format-icons": {
-    //         "default": "󰓷"
-    //     },
-    //     "on-click": "wofi --show=drun"
-    // }
+    },
+    "custom/hwtop": {
+        "format": "󰍹",
+        "exec": "hwtop plain once | grep VRAM",
+        "interval": "once",
+        "on-hover": "pkill -SIGRTMIN+9 waybar",
+        "signal": 9
+    },
+    "tray": {
+        "max-length": 8,
+        "icon-size": 16,
+        "spacing": 8,
+        "format-icons": {
+            "default": "󰓷"
+        },
+        "on-click": "wofi --show=drun"
+    }
 }

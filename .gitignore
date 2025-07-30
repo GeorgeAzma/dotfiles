@@ -7,3 +7,7 @@
 .config/dconf/user
 .config/session
 .config/QtProject.conf
+.config/karboncalligraphyrc
+.config/kritadisplayrc
+.config/kritarc
+.config/configstore/update-notifier-electron-builder.json

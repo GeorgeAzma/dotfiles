@@ -1,7 +1,7 @@
 # Alacritty Configuration (TOML format)
 
 [window]
-opacity = 0.6
+opacity = 0.7
 
 [scrolling]
 history = 10000

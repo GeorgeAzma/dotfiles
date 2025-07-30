@@ -13,9 +13,8 @@ window#waybar {
 
 tooltip {
     font-size: 22px;
-    background: rgba(26, 27, 38, 0.95);
+    background: rgba(26, 27, 38, 0.9);
     border-radius: 10px;
-    color: #cdd6f4;
     padding: 4px;
     border: 1.5px solid rgba(137, 180, 250, 0.15);
 }
@@ -77,6 +76,7 @@ tooltip label {
 #network,
 #bluetooth,
 #custom-weather,
+#custom-hwtop,
 #tray {
     margin: 0 4px;
     border-radius: 9px;
@@ -100,6 +100,7 @@ tooltip label {
     background: rgba(245, 194, 231, 0.15);
     color: #f5c2e7;
     padding: 4px;
+    padding-right: 2px;
     font-size: 12px;
 }
 
@@ -191,14 +192,32 @@ tooltip label {
     color: #585b70;
 }
 
+#custom-hwtop {
+    background: rgba(137, 130, 194, 0.2);
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+#custom-hwtop:hover {
+    background: rgba(130, 152, 194, 0.3);
+}
+
 #custom-weather {
     opacity: 0.85;
-    background: rgba(180, 170, 255, 0.25);
+    background: rgba(130, 152, 194, 0.25);
     padding: 2px;
-    margin-bottom: 5px;
+    padding-right: 1px;
+}
+
+#custom-weather:hover {
+    background: rgba(180, 170, 255, 0.35);
 }
 
 #tray {
-    background: rgba(137, 180, 250, 0.15);
+    background: rgba(137, 180, 250, 0.25);
     color: #89b4fa;
+    margin-bottom: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }

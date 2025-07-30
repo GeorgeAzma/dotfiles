@@ -18,6 +18,14 @@ restart() {
   (nohup "$@" >/dev/null 2>&1 &)
 }
 
+lsc() {
+    if [ -f "$1" ]; then
+        cat "$1"
+    else
+        ls "$@"
+    fi
+}
+
 chat() {
   prompt="$*"
   token=$(<~/.open-webui-token)

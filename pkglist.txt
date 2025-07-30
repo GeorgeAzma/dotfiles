@@ -39,6 +39,7 @@ jq
 lib32-nvidia-utils
 linux
 linux-firmware
+linux-firmware-nvidia
 mpc
 mpd
 nano
@@ -82,7 +83,6 @@ spotify
 steam
 sudo
 swaync
-sxiv
 thunar
 tmux
 ttf-dejavu
@@ -102,5 +102,4 @@ wofi
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-wlr
-xterm
 yay
