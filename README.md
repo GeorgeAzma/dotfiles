@@ -22,6 +22,7 @@
 - `SUPER + W` toggle waybar
 - `SUPER + X` kill active window
 - `SUPER + Y` open config files in vscode
+- `SUPER + ESC` shutdown
 - `SUPER + SHIFT + 1..5` move workspaces
 - `SUPER + SHIFT + S` screenie
 - `SUPER + ALT + 1..3` switch shaders `bright, contrast, vibrant`
@@ -29,10 +30,13 @@
 ### Waybar Features
 - app launcher `LMB: open`
 - switch workspaces `1..5`
-- time `hover: show weekday/day/month`
+- time `Hover: show weekday/day/month`
 - notifications `RMB: clear, MMB: toggle dnd`
 - audio `LMB: open menu, scroll: ±5, RMB: mute`
 - media `LMB: pause`
 - monitor-brightness `LMB/MMB/RLB: 0/50/100%`
 - wifi `LMB: open menu`
-- bluetooth `LMB: open menu`
+- bluetooth `LMB: open menu, RMB: toggle`
+- hardware monitor `RMB/MMB: start/stop monitoring, LMB: colored popup in console`
+- weather `Hover: show temp/humidity/precipitation/wind/pressure/clouds/location/visibility`
+- tray

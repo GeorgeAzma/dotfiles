@@ -166,9 +166,13 @@
     },
     "custom/hwtop": {
         "format": "󰍹",
-        "exec": "hwtop plain once | grep VRAM",
-        "interval": "once",
-        "on-hover": "pkill -SIGRTMIN+9 waybar",
+        "exec": "~/.config/waybar/scripts/hwtop-tooltip.sh",
+        "interval": 1,
+        "on-click-right": "alacritty -e hwtop",
+        "on-click": "touch /tmp/waybar_hwtop_hovered; pkill -SIGRTMIN+9 waybar",
+        "on-click-middle": "rm -f /tmp/waybar_hwtop_hovered",
+        "return-type": "json",
+        "tooltip": true,
         "signal": 9
     },
     "tray": {

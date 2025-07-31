@@ -1,4 +1,5 @@
 alacritty
+arch-install-scripts
 base
 base-devel
 bash-completion

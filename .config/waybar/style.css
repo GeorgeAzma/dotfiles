@@ -20,6 +20,7 @@ tooltip {
 }
 
 tooltip label {
+    font-family: monospace;
     color: #cdd6f4;
 }
 

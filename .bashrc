@@ -26,6 +26,21 @@ lsc() {
     fi
 }
 
+clean() {
+  rm -rf ~/.cache/*
+  rm -rf ~/.local/share/Trash/*
+  rm -rf ~/.npm/_cacache
+  rm -rf ~/.cargo/registry
+  rm -rf ~/.cargo/git
+  sudo rm -rf /tmp/*
+  sudo pacman -Rns --noconfirm $(pacman -Qtdq) # remove orphaned packages
+  yes | sudo pacman -Scc # remove unused package cache
+  sudo journalctl --vacuum-time=7d
+  docker image prune -f
+  docker container prune -f
+  docker builder prune -f
+}
+
 chat() {
   prompt="$*"
   token=$(<~/.open-webui-token)
