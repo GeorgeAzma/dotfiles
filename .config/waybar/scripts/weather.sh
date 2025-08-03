@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# TODO: 
+# - air quality index
+# - UV index
+
 API_KEY="13dd238e71d34172f8ff971a90d8f80c"
 CITY="Kojori,Tbilisi"
 response=$(curl -s "https://api.openweathermap.org/data/2.5/weather?q=$CITY&appid=$API_KEY&units=metric")
@@ -46,7 +50,9 @@ else
   precipitation="0mm"
 fi
 
-tooltip="$temperature°C ($feels_like°C) $humidity%\n$precipitation ${wind_speed}m/s ${ground_pressure}hPa\n$visibility, $clouds% cloudy\n$name @$lat,$lon"
+sun=$(sun $lat $lon waybar)
+
+tooltip="$temperature°C ($feels_like°C) $humidity%\n$precipitation ${wind_speed}m/s ${ground_pressure}hPa\n$visibility, $clouds% cloudy\n$name @$lat,$lon\n\n$sun"
 
 case "$icon_code" in
   "01d") icon="☀️" ;;       # clear sky day

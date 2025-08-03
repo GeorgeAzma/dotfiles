@@ -1,3 +1,4 @@
+7zip
 alacritty
 arch-install-scripts
 base
@@ -97,6 +98,8 @@ vulkan-tools
 vulkan-validation-layers
 waybar
 wget
+wine
+winetricks
 wireplumber
 wl-clipboard
 wofi

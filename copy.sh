@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 cd "$(dirname "$0")" 
-pacman -Qqe | grep -v -E '^(krita|anki-bin|fio)$' > pkglist.txt
-pacman -Qqm | grep -v -E '^(krita|anki-bin|anki-bin-debug)$' > aurlist.txt
+pacman -Qqe | grep -v -E '^(krita|anki-bin|fio|jdk17-openjdk|android-studio|yarn)$' > pkglist.txt
+pacman -Qqm | grep -v -E '^(krita|anki-bin|anki-bin-debug|android-studio)$' > aurlist.txt
 
 mkdir -p .config
 mkdir -p .local/share/nwg-look

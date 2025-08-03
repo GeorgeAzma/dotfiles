@@ -19,11 +19,16 @@ restart() {
 }
 
 lsc() {
-    if [ -f "$1" ]; then
-        cat "$1"
-    else
-        ls "$@"
-    fi
+  if [ -f "$1" ]; then
+      cat "$1"
+  else
+      ls "$@"
+  fi
+}
+
+windows() {
+  sudo efibootmgr -n 0004
+  reboot
 }
 
 clean() {
@@ -44,7 +49,7 @@ clean() {
 chat() {
   prompt="$*"
   token=$(<~/.open-webui-token)
-  response=$(curl -s 'https://lumiey.uk/api/chat/completions' \
+  response=$(curl -s 'http://localhost:8080/api/chat/completions' \
     -H "Authorization: Bearer $token" \
     -H "Content-Type: application/json" \
     -d @- <<EOF | jq -r '.choices[0].message.content // "Error: " + (.error.message // "Unknown error")'
