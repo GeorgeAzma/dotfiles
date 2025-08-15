@@ -10,5 +10,6 @@
 .config/karboncalligraphyrc
 .config/kritadisplayrc
 .config/kritarc
+.config/kritashortcutsrc
 .config/configstore/update-notifier-electron-builder.json
 .config/menus/applications-merged

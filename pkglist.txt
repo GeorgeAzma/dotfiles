@@ -11,6 +11,7 @@ brightnessctl
 cliphist
 cloudflared
 cmake
+cuda
 ddcutil
 docker
 docker-compose
@@ -33,12 +34,12 @@ gvfs
 htop
 hyprland
 hyprpaper
+hyprpicker
 hyprshade
 iftop
 inotify-tools
 inter-font
 jq
-lib32-nvidia-utils
 linux
 linux-firmware
 linux-firmware-nvidia
@@ -48,10 +49,10 @@ nano
 neofetch
 networkmanager
 nftables
+nm-connection-editor
 noto-fonts-cjk
 noto-fonts-emoji
 npm
-ntfs-3g
 nvidia
 nvidia-container-toolkit
 nvidia-settings
@@ -97,6 +98,7 @@ visual-studio-code-bin
 vulkan-tools
 vulkan-validation-layers
 waybar
+webp-pixbuf-loader
 wget
 wine
 winetricks

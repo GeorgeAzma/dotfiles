@@ -8,9 +8,17 @@ image/x-xcursor=com.google.Chrome.desktop
 application/yaml=code.desktop
 application/x-zerosize=code.desktop
 text/markdown=code.desktop
+inode/directory=thunar.desktop
+text/x-csrc=code.desktop
+text/plain=code.desktop
 
 [Added Associations]
 image/x-xcursor=com.google.Chrome.desktop;
 application/yaml=code.desktop;
 application/x-zerosize=code.desktop;
 text/markdown=code.desktop;
+text/x-log=code.desktop;
+text/x-csrc=code.desktop;
+text/plain=code.desktop;
+image/webp=google-chrome.desktop;krita_webp.desktop;krita_qimageio.desktop;
+image/png=krita_png.desktop;
