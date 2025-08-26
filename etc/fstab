@@ -1,0 +1,11 @@
+# /dev/nvme1n1p7
+UUID=088a3b75-3f9f-49b9-9c0f-8bd517bfc68f	/         	ext4      	rw,relatime	0 1
+
+# /dev/nvme1n1p5
+UUID=0C51-ED8E      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro,noauto,x-systemd.automount	0 2
+
+# /dev/nvme1n1p3
+UUID=0A9AD4529AD43BBF	/mnt/c    	ntfs3     	rw,relatime,uid=0,gid=0,iocharset=utf8,nofail,noauto,x-systemd.automount	0 0
+
+# /dev/nvme1n1p6
+UUID=4fe55613-b5e5-42ee-aafe-5dbf31e4228a	none      	swap      	defaults,nofail  	0 0

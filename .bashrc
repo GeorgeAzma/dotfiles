@@ -1,19 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export CUDA_HOME="/opt/cuda"
-export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
-export PATH="$HOME/.local/bin:$CUDA_HOME/bin:$PATH"
-
-# Python environment setup
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
-# if it causes errors do:
-# env -u PYENV_ROOT PATH=$(echo "$PATH" | sed 's|^$HOME/.pyenv/bin:||' | sed 's|^$HOME/.pyenv/shims:||') yay -S anki-bin
-
-export LS_COLORS='di=1;34:ln=1;36:so=1;35:pi=33:ex=1;32:bd=1;33:cd=1;33:su=37:sg=30:tw=30:ow=34:'
-
 alias ls='ls --color=auto'
 alias ip='ip -h -c'
 alias grep='grep --color=auto'
@@ -24,6 +11,102 @@ alias c='clear'
 alias la='ls -A'
 alias pacman='sudo pacman'
 alias mount='sudo mount'
+
+alias mount-ram='sudo mount -t tmpfs -o size=24G,mode=1777,noatime tmpfs /mnt/ram'
+alias umount-ram='sudo umount /mnt/ram'
+
+disk-bench() {
+  target="."
+
+  mkdir -p "$target/fio" > /dev/null 2>&1
+
+  cleanup() {
+      rm -rf "$target/fio"
+  }
+  trap cleanup INT TERM EXIT
+
+  GREEN="\033[1;32m"
+  BLUE="\033[1;34m"
+  YELLOW="\033[1;33m"
+  RED="\033[1;31m"
+  BRIGHT="\033[1m"
+  DIM="\033[2m"
+  NC="\033[0m"
+
+  printf "${YELLOW}Test             MB/s   IOPS    µs${NC}\n"
+  echo            "----             ----   ----    --"
+
+  run_fio() {
+    local name=$1
+    local rw=$2
+    local bs=$3
+    local iodepth=$4
+    local numjobs=$5
+    local color=$6
+
+    size=512
+    qsize=$(($size / $iodepth))
+
+    local json=$(fio --name="$name" \
+        --ioengine=libaio \
+        --rw="$rw" \
+        --bs="$bs" \
+        --numjobs="$numjobs" \
+        --iodepth="$iodepth" \
+        --size=${size}m \
+        --group_reporting \
+        --direct=1 \
+        --time_based \
+        --runtime=4 \
+        --directory="$target/fio" \
+        --output-format=json)
+
+    local mbps iops lat
+    if [[ $rw == *read* ]]; then
+        mbps=$(echo "$json" | jq ".jobs[0].read.bw_bytes / 1e6" | awk '{printf "%.0f", $1}')
+        iops=$(echo "$json" | jq ".jobs[0].read.iops" | awk '{printf "%.0f", $1}')
+        lat=$(echo "$json" | jq ".jobs[0].read.lat_ns.mean / 1000" | awk '{printf "%.0f", $1}')
+    else
+        mbps=$(echo "$json" | jq ".jobs[0].write.bw_bytes / 1e6" | awk '{printf "%.0f", $1}')
+        iops=$(echo "$json" | jq ".jobs[0].write.iops" | awk '{printf "%.0f", $1}')
+        lat=$(echo "$json" | jq ".jobs[0].write.lat_ns.mean / 1000" | awk '{printf "%.0f", $1}')
+    fi
+
+    gb=$((mbps / 1000))
+    mb=$((mbps % 1000))
+    if (( gb > 0 )); then
+        mbps_fmt=$(printf "${gb}${DIM}$(printf "%03d" $mb)${NC}${color}")
+    else
+        mbps_fmt=$(printf "${mb}${DIM}${NC}${color}")
+    fi
+
+    k_iops=$((iops / 1000))
+    iops=$((iops % 1000))
+    if (( k_iops > 0 )); then
+        iops_fmt=$(printf "${k_iops}${DIM}$(printf "%03d" $iops)${NC}${color}")
+    else
+        iops_fmt=$(printf "${iops}${DIM}${NC}${color}")
+    fi
+    
+    printf "${color}%-16s %-21s %-22s %-6s${NC}\n" "$name" "$mbps_fmt" "$iops_fmt" "$lat"
+ 
+    rm -rf "$target/fio"/*
+  }
+
+  run_fio "R Seq1M   Q8T1" read 1m 8 1 $GREEN
+  run_fio "R Seq128K Q32T1" read 128k 32 1 $GREEN
+  run_fio "R Rnd4K   Q32T16" randread 4k 32 16 $YELLOW
+  run_fio "R Rnd4K   Q1T1" randread 4k 1 1 $YELLOW
+  
+  run_fio "W Seq1M   Q8T1" write 1m 8 1 $BLUE
+  run_fio "W Seq128K Q32T1" write 128k 32 1 $BLUE
+  run_fio "W Rnd4K   Q32T16" randwrite 4k 32 16 $RED
+  run_fio "W Rnd4K   Q1T1" randwrite 4k 1 1 $RED
+  
+  cleanup
+}
+
+
 
 ai() {
   local project_dir="/home/lumi/code/ai-suite"
@@ -71,7 +154,7 @@ clean() {
   sudo rm -rf ~/.cargo/git
   sudo rm -rf /tmp/*
   sudo rm -rf /var/tmp/*
-  sudo pacman -Rns --noconfirm $(pacman -Qtdq) # remove orphaned packages
+  orphans=$(pacman -Qtdq) && [[ -n $orphans ]] && sudo pacman -Rns --noconfirm $orphans # remove orphaned packages
   yes | sudo pacman -Scc # remove unused package cache
   sudo journalctl --vacuum-time=7d
   docker image prune -f
@@ -105,5 +188,3 @@ EOF
 }
 
 PS1='\[\e[36m\]\W\[\e[32m\]\$\[\e[0m\] '
-
-. "$HOME/.cargo/env"

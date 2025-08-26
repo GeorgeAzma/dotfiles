@@ -8,6 +8,7 @@ blueman
 bluez
 bluez-utils
 brightnessctl
+catppuccin-gtk-theme-git
 cliphist
 cloudflared
 cmake
@@ -16,8 +17,6 @@ ddcutil
 docker
 docker-compose
 dosfstools
-dracula-gtk-theme
-dracula-icons-git
 efibootmgr
 fcitx5
 fcitx5-configtool
